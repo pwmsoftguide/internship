@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #e2e8f0;
+        padding: 2rem;
+      }
+
+      .container {
+        display: flex;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .controls {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .controls label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .controls input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .output {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        background-color: #f4f4f4;
+        border: 2px solid #333;
+        border-radius: 12px;
+        width: 250px;
+        height: 150px;
+        padding: 15px;
+        margin-top: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+      }
+
+      .badge {
+        background-color: gold;
+        color: black;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- left section -->
+      <section class="controls">
+        <h2>Update Variables</h2>
+
+        <label for="nameInput">Name (String):</label>
+        <input type="text" id="nameInput" value="Alex Walker" />
+
+        <label for="ageInput">Age (Number):</label>
+        <input type="number" id="ageInput" value="28" />
+
+        <label for="vipInput">VIP Status (Boolean):</label>
+        <input type="checkbox" id="vipInput" checked />
+
+        <label for="colorInput">Card Color:</label>
+        <input type="color" id="colorInput" value="#389749" />
+      </section>
+
+      <!-- right section -->
+      <section class="output">
+        <h2>Live DOM Output</h2>
+
+        <div id="idCard" class="card">
+          <div class="card-header">
+            <span id="vipBadge" class="badge">VIP MEMBER</span>
+          </div>
+          <div class="card-body">
+            <p id="cardName">Alex Walker</p>
+            <p>Age: <span id="cardAge">28</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
