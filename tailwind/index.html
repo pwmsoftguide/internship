@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS – Navbar, Flex & Grid Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-950 text-gray-100 font-sans">
+
+    <!-- ================================================
+         NAVBAR
+    ================================================ -->
+    <nav class="bg-gray-900 border-b border-gray-700 shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-extrabold text-indigo-400 tracking-tight hover:text-indigo-300 transition">
+          🚀 TailwindUI
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <li><a href="#padding"  class="text-gray-300 hover:text-indigo-400 transition">Padding</a></li>
+          <li><a href="#margin"   class="text-gray-300 hover:text-indigo-400 transition">Margin</a></li>
+          <li><a href="#flex"     class="text-gray-300 hover:text-indigo-400 transition">Flexbox</a></li>
+          <li><a href="#grid"     class="text-gray-300 hover:text-indigo-400 transition">Grid</a></li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="#" class="hidden md:inline-block bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-5 py-2 rounded-full transition shadow-md">
+          Get Started
+        </a>
+
+        <!-- Mobile Hamburger (visual only) -->
+        <button class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Page Wrapper -->
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-20">
+
+      <!-- ================================================
+           SECTION HEADER HELPER
+      ================================================ -->
+      <!-- (reused visually via classes below) -->
+
+      <!-- ================================================
+           1. PADDING EXAMPLES
+      ================================================ -->
+      <section id="padding">
+        <h2 class="text-3xl font-bold text-indigo-400 mb-2">📦 Padding</h2>
+        <p class="text-gray-400 mb-8 text-sm">
+          <code class="bg-gray-800 px-2 py-1 rounded text-indigo-300">p-*</code> sets all sides &nbsp;|&nbsp;
+          <code class="bg-gray-800 px-2 py-1 rounded text-indigo-300">px-*</code> horizontal &nbsp;|&nbsp;
+          <code class="bg-gray-800 px-2 py-1 rounded text-indigo-300">py-*</code> vertical &nbsp;|&nbsp;
+          <code class="bg-gray-800 px-2 py-1 rounded text-indigo-300">pt-* pr-* pb-* pl-*</code> individual sides
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+            <div class="bg-indigo-600/20 border border-dashed border-indigo-500 m-4">
+              <div class="bg-indigo-600 p-2 text-center text-xs font-mono rounded">p-2</div>
+            </div>
+            <p class="text-center text-gray-400 text-xs pb-4">All sides · <code>p-2</code> (8px)</p>
+          </div>
+
+          <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+            <div class="bg-indigo-600/20 border border-dashed border-indigo-500 m-4">
+              <div class="bg-indigo-600 px-8 py-2 text-center text-xs font-mono rounded">px-8 py-2</div>
+            </div>
+            <p class="text-center text-gray-400 text-xs pb-4">Horizontal + Vertical</p>
+          </div>
+
+          <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+            <div class="bg-indigo-600/20 border border-dashed border-indigo-500 m-4">
+              <div class="bg-indigo-600 pt-8 pr-4 pb-2 pl-0 text-center text-xs font-mono rounded">
+                pt-8 pr-4 pb-2 pl-0
+              </div>
+            </div>
+            <p class="text-center text-gray-400 text-xs pb-4">Individual sides</p>
+          </div>
+
+          <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+            <div class="bg-indigo-600/20 border border-dashed border-indigo-500 m-4">
+              <div class="bg-indigo-600 p-12 text-center text-xs font-mono rounded">p-12</div>
+            </div>
+            <p class="text-center text-gray-400 text-xs pb-4">Large padding · <code>p-12</code> (48px)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           2. MARGIN EXAMPLES
+      ================================================ -->
+      <section id="margin">
+        <h2 class="text-3xl font-bold text-pink-400 mb-2">📐 Margin</h2>
+        <p class="text-gray-400 mb-8 text-sm">
+          <code class="bg-gray-800 px-2 py-1 rounded text-pink-300">m-*</code> all sides &nbsp;|&nbsp;
+          <code class="bg-gray-800 px-2 py-1 rounded text-pink-300">mx-auto</code> center horizontally &nbsp;|&nbsp;
+          <code class="bg-gray-800 px-2 py-1 rounded text-pink-300">mt-* mr-* mb-* ml-*</code> individual
+        </p>
+
+        <div class="space-y-6">
+
+          <!-- mx-auto centering -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs text-gray-500 mb-3 font-mono">mx-auto — center a block element</p>
+            <div class="bg-pink-600 mx-auto w-48 py-3 rounded-lg text-center text-sm font-semibold">
+              mx-auto centered
+            </div>
+          </div>
+
+          <!-- Individual margins -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs text-gray-500 mb-3 font-mono">mt-8 mr-4 mb-2 ml-16</p>
+            <div class="border border-dashed border-pink-500/40 rounded-lg">
+              <div class="bg-pink-600 mt-8 mr-4 mb-2 ml-16 py-3 rounded-lg text-center text-sm font-semibold">
+                Different margins per side
+              </div>
+            </div>
+          </div>
+
+          <!-- Negative margin -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 overflow-hidden">
+            <p class="text-xs text-gray-500 mb-3 font-mono">-mt-4 (negative margin)</p>
+            <div class="bg-gray-700 p-4 rounded-lg">
+              <div class="bg-pink-600 -mt-4 -mx-4 py-3 text-center text-sm font-semibold rounded-t-lg">
+                Negative margin pulls element up/out
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           3. FLEXBOX EXAMPLES
+      ================================================ -->
+      <section id="flex">
+        <h2 class="text-3xl font-bold text-emerald-400 mb-2">↔️ Flexbox</h2>
+        <p class="text-gray-400 mb-8 text-sm">
+          <code class="bg-gray-800 px-2 py-1 rounded text-emerald-300">flex</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-emerald-300">justify-*</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-emerald-300">items-*</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-emerald-300">gap-*</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-emerald-300">flex-wrap</code>
+        </p>
+
+        <div class="space-y-6">
+
+          <!-- justify-start / center / end / between -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6 space-y-4">
+            <p class="text-xs font-mono text-gray-500">justify-start</p>
+            <div class="flex justify-start gap-3">
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">A</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">B</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">C</div>
+            </div>
+
+            <p class="text-xs font-mono text-gray-500">justify-center</p>
+            <div class="flex justify-center gap-3">
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">A</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">B</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">C</div>
+            </div>
+
+            <p class="text-xs font-mono text-gray-500">justify-end</p>
+            <div class="flex justify-end gap-3">
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">A</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">B</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">C</div>
+            </div>
+
+            <p class="text-xs font-mono text-gray-500">justify-between</p>
+            <div class="flex justify-between gap-3">
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Logo</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Nav Links</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">CTA</div>
+            </div>
+          </div>
+
+          <!-- items-* alignment -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">items-start · items-center · items-end</p>
+            <div class="flex gap-6">
+              <div class="flex-1 flex items-start gap-2 bg-gray-700 p-3 rounded-lg h-20">
+                <div class="bg-emerald-500 px-2 py-1 rounded text-xs">items-start</div>
+                <div class="bg-emerald-700 px-2 py-3 rounded text-xs">tall</div>
+              </div>
+              <div class="flex-1 flex items-center gap-2 bg-gray-700 p-3 rounded-lg h-20">
+                <div class="bg-emerald-500 px-2 py-1 rounded text-xs">items-center</div>
+                <div class="bg-emerald-700 px-2 py-3 rounded text-xs">tall</div>
+              </div>
+              <div class="flex-1 flex items-end gap-2 bg-gray-700 p-3 rounded-lg h-20">
+                <div class="bg-emerald-500 px-2 py-1 rounded text-xs">items-end</div>
+                <div class="bg-emerald-700 px-2 py-3 rounded text-xs">tall</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- flex-wrap -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">flex flex-wrap gap-3</p>
+            <div class="flex flex-wrap gap-3">
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 1</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 2</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 3</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 4</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 5</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 6</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 7</div>
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm">Item 8</div>
+            </div>
+          </div>
+
+          <!-- flex-col -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">flex flex-col gap-3</p>
+            <div class="flex flex-col gap-3 max-w-xs">
+              <div class="bg-emerald-600 px-4 py-2 rounded-lg text-sm text-center">Stack Item 1</div>
+              <div class="bg-emerald-700 px-4 py-2 rounded-lg text-sm text-center">Stack Item 2</div>
+              <div class="bg-emerald-800 px-4 py-2 rounded-lg text-sm text-center">Stack Item 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           4. GRID EXAMPLES
+      ================================================ -->
+      <section id="grid">
+        <h2 class="text-3xl font-bold text-amber-400 mb-2">🔲 Grid</h2>
+        <p class="text-gray-400 mb-8 text-sm">
+          <code class="bg-gray-800 px-2 py-1 rounded text-amber-300">grid</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-amber-300">grid-cols-*</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-amber-300">col-span-*</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-amber-300">row-span-*</code> · 
+          <code class="bg-gray-800 px-2 py-1 rounded text-amber-300">gap-*</code>
+        </p>
+
+        <div class="space-y-6">
+
+          <!-- 3-column grid -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">grid grid-cols-3 gap-4</p>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-amber-600 rounded-lg py-6 text-center text-sm font-semibold">Col 1</div>
+              <div class="bg-amber-600 rounded-lg py-6 text-center text-sm font-semibold">Col 2</div>
+              <div class="bg-amber-600 rounded-lg py-6 text-center text-sm font-semibold">Col 3</div>
+              <div class="bg-amber-700 rounded-lg py-6 text-center text-sm font-semibold">Col 4</div>
+              <div class="bg-amber-700 rounded-lg py-6 text-center text-sm font-semibold">Col 5</div>
+              <div class="bg-amber-700 rounded-lg py-6 text-center text-sm font-semibold">Col 6</div>
+            </div>
+          </div>
+
+          <!-- col-span -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">col-span-2 · col-span-3 (full width)</p>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-amber-600 rounded-lg py-6 text-center text-sm font-semibold col-span-2">col-span-2</div>
+              <div class="bg-amber-800 rounded-lg py-6 text-center text-sm font-semibold">col-span-1</div>
+              <div class="bg-amber-500 rounded-lg py-6 text-center text-sm font-semibold col-span-3">col-span-3 (full)</div>
+            </div>
+          </div>
+
+          <!-- Responsive grid -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">
+              grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 — <span class="text-amber-300">responsive!</span>
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl p-4 text-center">
+                <p class="text-2xl mb-1">🎨</p>
+                <p class="text-sm font-semibold">Design</p>
+              </div>
+              <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-4 text-center">
+                <p class="text-2xl mb-1">⚙️</p>
+                <p class="text-sm font-semibold">Develop</p>
+              </div>
+              <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl p-4 text-center">
+                <p class="text-2xl mb-1">🚀</p>
+                <p class="text-sm font-semibold">Deploy</p>
+              </div>
+              <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl p-4 text-center">
+                <p class="text-2xl mb-1">📊</p>
+                <p class="text-sm font-semibold">Analyse</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dashboard layout (grid + flex combo) -->
+          <div class="bg-gray-800 rounded-xl border border-gray-700 p-6">
+            <p class="text-xs font-mono text-gray-500 mb-4">Dashboard layout — grid + flex combo</p>
+            <div class="grid grid-cols-4 grid-rows-2 gap-4 h-56">
+              <div class="col-span-3 row-span-2 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-xl flex items-center justify-center text-lg font-bold">
+                Main Content (col-span-3 row-span-2)
+              </div>
+              <div class="bg-gray-700 rounded-xl flex items-center justify-center text-sm font-semibold">
+                Sidebar A
+              </div>
+              <div class="bg-gray-600 rounded-xl flex items-center justify-center text-sm font-semibold">
+                Sidebar B
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20 py-8 text-center text-gray-500 text-sm">
+      Built with <span class="text-indigo-400 font-semibold">Tailwind CSS CDN</span> · Padding · Margin · Flex · Grid
+    </footer>
+
+  </body>
+</html>
