@@ -33,13 +33,28 @@
           Get Started
         </a>
 
-        <!-- Mobile Hamburger (visual only) -->
-        <button class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Open navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none transition" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <!-- Hamburger icon -->
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
           </svg>
+          <!-- Close icon (hidden by default) -->
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-700 px-6 py-4 space-y-3">
+        <a href="#padding" class="block text-gray-300 hover:text-indigo-400 transition text-sm font-medium py-2 border-b border-gray-800" onclick="closeMobileMenu()">Padding</a>
+        <a href="#margin"  class="block text-gray-300 hover:text-indigo-400 transition text-sm font-medium py-2 border-b border-gray-800" onclick="closeMobileMenu()">Margin</a>
+        <a href="#flex"    class="block text-gray-300 hover:text-indigo-400 transition text-sm font-medium py-2 border-b border-gray-800" onclick="closeMobileMenu()">Flexbox</a>
+        <a href="#grid"    class="block text-gray-300 hover:text-indigo-400 transition text-sm font-medium py-2" onclick="closeMobileMenu()">Grid</a>
+        <a href="#" class="block mt-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-5 py-2 rounded-full transition text-center">Get Started</a>
       </div>
     </nav>
 
@@ -321,5 +336,32 @@
       Built with <span class="text-indigo-400 font-semibold">Tailwind CSS CDN</span> · Padding · Margin · Flex · Grid
     </footer>
 
+  <script>
+    const menuBtn  = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen  = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        mobileMenu.classList.remove('hidden');
+        iconOpen.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        menuBtn.setAttribute('aria-label', 'Close navigation menu');
+      }
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open navigation menu');
+    }
+  </script>
   </body>
 </html>
